@@ -52,3 +52,15 @@ cmake --build --preset Debug
 1. **GPIO**：LED 常亮（不喂狗，芯片每 ~2s 复位，LED 会短暂熄灭后重新点亮）。
 2. **定时器**：`tick` 每秒约 +1000，持续增长（喂狗）。
 3. **看门狗**：`tick` 从 0 涨到约 2000 后归零，反复循环（不喂狗复位）。
+
+## 预编译固件
+
+`firmware/` 目录下是三题各自编译好的 `.elf` 文件，可直接用 Ozone 烧录，无需重新编译：
+
+| 文件 | 题目 | 现象 |
+|------|------|------|
+| `task1_gpio.elf` | 1 GPIO | LED 亮 |
+| `task2_timer.elf` | 2 定时器 | tick 每秒约 +1000 |
+| `task3_watchdog.elf` | 3 看门狗 | tick 涨到约 2000 归零 |
+
+> 若修改了源码，重新 `cmake --build --preset Debug` 编译后再替换对应的 `.elf`。
