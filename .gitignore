@@ -1,0 +1,23 @@
+# Build output
+build/
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.obj
+
+# CMake
+.cache/
+CMakeUserPresets.json
+
+# IDE
+.vscode/
+.idea/
+
+# CubeMX
+.mxproject
+
+# OS
+Thumbs.db
+Desktop.ini
