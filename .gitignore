@@ -1,6 +1,7 @@
 # Build output
 build/
 *.elf
+!firmware/*.elf
 *.hex
 *.bin
 *.map
